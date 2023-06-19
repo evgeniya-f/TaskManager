@@ -10,7 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c40da2c6-8161-402a-85b9-b0880ccdd28c" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/data/repository/TaskRepositoryImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/repository/TaskRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/use_case/DeleteTaskUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/use_case/GetTasksUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/use_case/TaskUseCases.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/utils/OrderType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/domain/utils/TaskOrder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/data/data_source/TaskDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/data/data_source/TaskDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/data/data_source/TaskDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tasktrackercompose/feature_task_list/data/data_source/TaskDatabase.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +38,7 @@
       <list>
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Sealed Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -298,7 +309,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -311,9 +322,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
     <MESSAGE value="First commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>

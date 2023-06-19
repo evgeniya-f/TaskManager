@@ -15,6 +15,9 @@ interface TaskDao {
     fun getTasks(): Flow<List<Task>>
     // not suspend, because we return the Flow
 
+    @Query("SELECT * FROM task WHERE is_fav = :is_fav")
+    fun getFavoriteTasks(is_fav: Boolean): Flow<List<Task>>
+
     @Query("SELECT * FROM task WHERE id = :id")
     suspend fun getTaskById(id: Int): Task?
 

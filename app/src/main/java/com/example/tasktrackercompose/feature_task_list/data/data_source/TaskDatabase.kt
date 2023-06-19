@@ -8,12 +8,11 @@ import com.example.tasktrackercompose.feature_task_list.domain.utils.Converters
 
 @Database(
     entities = [Task::class],
-    version = 1
+    version = 2
 )
 @TypeConverters(Converters::class)
 abstract class TaskDatabase: RoomDatabase() {
 
     abstract  val taskDao: TaskDao
-
 
 }
