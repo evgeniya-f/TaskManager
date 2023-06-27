@@ -33,6 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tasktrackercompose.R
 import com.example.tasktrackercompose.feature_task_list.domain.model.Task
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
@@ -59,7 +61,7 @@ fun TaskElement(
                         onLongPress = {
                             onLongPress(task)
                         },
-                        onTap = {updatedOnTap.value.invoke()}
+                        onTap = { updatedOnTap.value.invoke() }
                     )
                 }
 
@@ -85,7 +87,9 @@ fun TaskElement(
                         modifier = modifier
                             .offset(x = 40.dp, y = 20.dp)
                     ) {
-                        Text(text = task.date.toString(), modifier = modifier.padding(4.dp))
+                        val df: DateFormat = SimpleDateFormat("dd/MM/yyyy")
+
+                        Text(text = df.format(task.date), modifier = modifier.padding(4.dp))
                     }
                 }
                 IconButton(

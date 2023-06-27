@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.tasktrackercompose.app-mergeDebugResources-54:/values-v16/values-v16.xml",
+            "outputFile": "com.example.tasktrackercompose.app-mergeDebugResources-68:/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\4e90f80cbfbf417f63eb2edfe436ed77\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
@@ -11,6 +11,25 @@
                         "startOffsets": "55",
                         "endColumns": "65",
                         "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\f8e399c9e3f7c7694bf3d17ff6f34ec2\\transformed\\appcompat-1.5.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
                     }
                 }
             ]

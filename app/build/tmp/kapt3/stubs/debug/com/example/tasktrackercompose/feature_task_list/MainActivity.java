@@ -2,6 +2,7 @@ package com.example.tasktrackercompose.feature_task_list;
 
 import android.os.Bundle;
 import androidx.activity.ComponentActivity;
+import androidx.navigation.NavType;
 import com.example.tasktrackercompose.feature_task_list.presentation.util.Screen;
 import dagger.hilt.android.AndroidEntryPoint;
 

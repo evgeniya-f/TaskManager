@@ -2,6 +2,7 @@ package com.example.tasktrackercompose;
 
 import com.example.tasktrackercompose.di.AppModule;
 import com.example.tasktrackercompose.feature_task_list.MainActivity_GeneratedInjector;
+import com.example.tasktrackercompose.feature_task_list.presentation.create_task.AddEditTaskViewModel_HiltModules;
 import com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
@@ -144,6 +145,7 @@ public final class TaskTrackerApp_HiltComponents {
 
   @Subcomponent(
       modules = {
+          AddEditTaskViewModel_HiltModules.KeyModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
@@ -183,6 +185,7 @@ public final class TaskTrackerApp_HiltComponents {
 
   @Subcomponent(
       modules = {
+          AddEditTaskViewModel_HiltModules.BindsModule.class,
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
           TasksViewModel_HiltModules.BindsModule.class
       }

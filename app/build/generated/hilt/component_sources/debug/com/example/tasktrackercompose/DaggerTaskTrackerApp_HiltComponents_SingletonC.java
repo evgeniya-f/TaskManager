@@ -15,6 +15,8 @@ import com.example.tasktrackercompose.feature_task_list.MainActivity;
 import com.example.tasktrackercompose.feature_task_list.data.data_source.TaskDatabase;
 import com.example.tasktrackercompose.feature_task_list.domain.repository.TaskRepository;
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.TaskUseCases;
+import com.example.tasktrackercompose.feature_task_list.presentation.create_task.AddEditTaskViewModel;
+import com.example.tasktrackercompose.feature_task_list.presentation.create_task.AddEditTaskViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel;
 import com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;
@@ -34,7 +36,9 @@ import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideApplicationFactory;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
+import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
+import dagger.internal.SetBuilder;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -374,7 +378,7 @@ public final class DaggerTaskTrackerApp_HiltComponents_SingletonC {
 
     @Override
     public Set<String> getViewModelKeys() {
-      return Collections.<String>singleton(TasksViewModel_HiltModules_KeyModule_ProvideFactory.provide());
+      return SetBuilder.<String>newSetBuilder(2).add(AddEditTaskViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(TasksViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
     }
 
     @Override
@@ -394,11 +398,15 @@ public final class DaggerTaskTrackerApp_HiltComponents_SingletonC {
   }
 
   private static final class ViewModelCImpl extends TaskTrackerApp_HiltComponents.ViewModelC {
+    private final SavedStateHandle savedStateHandle;
+
     private final SingletonCImpl singletonCImpl;
 
     private final ActivityRetainedCImpl activityRetainedCImpl;
 
     private final ViewModelCImpl viewModelCImpl = this;
+
+    private Provider<AddEditTaskViewModel> addEditTaskViewModelProvider;
 
     private Provider<TasksViewModel> tasksViewModelProvider;
 
@@ -407,7 +415,7 @@ public final class DaggerTaskTrackerApp_HiltComponents_SingletonC {
         ViewModelLifecycle viewModelLifecycleParam) {
       this.singletonCImpl = singletonCImpl;
       this.activityRetainedCImpl = activityRetainedCImpl;
-
+      this.savedStateHandle = savedStateHandleParam;
       initialize(savedStateHandleParam, viewModelLifecycleParam);
 
     }
@@ -415,12 +423,13 @@ public final class DaggerTaskTrackerApp_HiltComponents_SingletonC {
     @SuppressWarnings("unchecked")
     private void initialize(final SavedStateHandle savedStateHandleParam,
         final ViewModelLifecycle viewModelLifecycleParam) {
-      this.tasksViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.addEditTaskViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.tasksViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
     }
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return Collections.<String, Provider<ViewModel>>singletonMap("com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel", ((Provider) tasksViewModelProvider));
+      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(2).put("com.example.tasktrackercompose.feature_task_list.presentation.create_task.AddEditTaskViewModel", ((Provider) addEditTaskViewModelProvider)).put("com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel", ((Provider) tasksViewModelProvider)).build();
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -444,7 +453,10 @@ public final class DaggerTaskTrackerApp_HiltComponents_SingletonC {
       @Override
       public T get() {
         switch (id) {
-          case 0: // com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel 
+          case 0: // com.example.tasktrackercompose.feature_task_list.presentation.create_task.AddEditTaskViewModel 
+          return (T) new AddEditTaskViewModel(singletonCImpl.provideTaskUseCasesProvider.get(), viewModelCImpl.savedStateHandle);
+
+          case 1: // com.example.tasktrackercompose.feature_task_list.presentation.task_list.TasksViewModel 
           return (T) new TasksViewModel(singletonCImpl.provideTaskUseCasesProvider.get());
 
           default: throw new AssertionError(id);
