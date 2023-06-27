@@ -34,7 +34,7 @@ public final class TaskDatabase_Impl extends TaskDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Task` (`id` INTEGER, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `date` INTEGER NOT NULL, `is_fav` INTEGER NOT NULL, PRIMARY KEY(`id`))");

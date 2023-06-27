@@ -1,4 +1,4 @@
-#Sat Jun 03 13:37:18 VLAT 2023
+#Sat Jun 24 11:46:35 VLAT 2023
 base.0=D\:\\AndroidStudioProjects\\TaskTrackerCompose\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=D\:\\AndroidStudioProjects\\TaskTrackerCompose\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
 base.2=D\:\\AndroidStudioProjects\\TaskTrackerCompose\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\1\\classes.dex

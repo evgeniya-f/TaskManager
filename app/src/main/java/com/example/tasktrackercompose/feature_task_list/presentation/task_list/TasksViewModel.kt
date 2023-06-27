@@ -1,5 +1,6 @@
 package com.example.tasktrackercompose.feature_task_list.presentation.task_list
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,7 @@ class TasksViewModel @Inject constructor(
     private val taskUseCases: TaskUseCases
 ) : ViewModel() {
 
-    private val _state = mutableStateOf(TasksState())
+    private val _state = mutableStateOf<TasksState>(TasksState())
     val state: State<TasksState> = _state
 
     private var recentlyDeletedTask: Task? = null
@@ -57,6 +58,21 @@ class TasksViewModel @Inject constructor(
                 _state.value = state.value.copy(
                     isOrderSectionVisible = !state.value.isOrderSectionVisible
                 )
+            }
+
+            is TasksEvent.ChangeFavorite -> {
+                viewModelScope.launch {
+                    Log.d("В VM", "штучка ${event.task}")
+                    taskUseCases.addTask(event.task)
+
+
+                }
+            }
+
+            is TasksEvent.AddTask -> {
+                viewModelScope.launch {
+                    taskUseCases.addTask(event.task)
+                }
             }
         }
     }

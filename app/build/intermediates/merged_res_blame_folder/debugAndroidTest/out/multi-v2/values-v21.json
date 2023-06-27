@@ -4,7 +4,7 @@
             "outputFile": "com.example.tasktrackercompose.test.app-mergeDebugAndroidTestResources-30:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\80a3be0533cebc49362c85bda1fb8c71\\transformed\\core-1.10.1\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\4e90f80cbfbf417f63eb2edfe436ed77\\transformed\\core-1.10.1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\13f63a9bf8c6b0570c2dd28b30248c6b\\transformed\\core-1.5.0\\res\\values-v21\\values.xml",
+                    "source": "C:\\Users\\chuyk\\.gradle\\caches\\transforms-3\\75218acc1d07d85ab0e90986fd48f756\\transformed\\core-1.5.0\\res\\values-v21\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
