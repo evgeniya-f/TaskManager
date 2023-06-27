@@ -1,7 +1,9 @@
 package com.example.tasktrackercompose.feature_task_list.presentation.task_list
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -21,9 +23,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.tasktrackercompose.feature_task_list.domain.model.Task
 import com.example.tasktrackercompose.feature_task_list.presentation.task_list.components.TaskElement
-import java.sql.Date
+import com.example.tasktrackercompose.feature_task_list.presentation.util.Screen
+import java.util.Date
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -59,14 +63,24 @@ fun TasksScreen(
         },
         content = { padding ->
 
-            LazyColumn(modifier = Modifier.padding(padding).fillMaxSize()) {
+            LazyColumn(modifier = Modifier
+                .padding(padding)
+                .padding(horizontal = 8.dp)
+                .fillMaxSize()) {
                 items(state.tasks) { task ->
                     TaskElement(
-                        onClick = {},
+                        onClick = {
+                            navController?.navigate(
+                                Screen.AddEditTaskScreen.route +
+                                        "?taskId=${task.id}"
+                            )
+                        },
                         changeFavorite = {n_task: Task -> viewModel.onEvent(TasksEvent.ChangeFavorite(n_task))},
                         task = task,
+                        onLongPress = {n_task: Task -> viewModel.onEvent(TasksEvent.DeleteTask(n_task))},
                         modifier = Modifier
                     )
+                    Spacer(modifier = Modifier.height(8.dp),)
                 }
 
             }
@@ -107,6 +121,7 @@ fun ScreenPreview() {
                     onClick = {},
                     changeFavorite = {},
                     task = task,
+                    onLongPress = {},
                     modifier = Modifier
                 )
             }

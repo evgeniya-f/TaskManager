@@ -3,7 +3,7 @@ package com.example.tasktrackercompose.feature_task_list.domain.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.lang.Exception
-import java.sql.Date
+import java.util.Date
 
 @Entity
 data class Task(

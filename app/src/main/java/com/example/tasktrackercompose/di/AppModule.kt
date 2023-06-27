@@ -8,6 +8,7 @@ import com.example.tasktrackercompose.feature_task_list.domain.repository.TaskRe
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.AddTaskUseCase
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.ChangeFavoriteUseCase
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.DeleteTaskUseCase
+import com.example.tasktrackercompose.feature_task_list.domain.use_case.GetTaskUseCase
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.GetTasksUseCase
 import com.example.tasktrackercompose.feature_task_list.domain.use_case.TaskUseCases
 import dagger.Module
@@ -43,7 +44,8 @@ object AppModule {
             getTasksUseCase = GetTasksUseCase(repository),
             deleteTaskUseCase = DeleteTaskUseCase(repository),
             addTask = AddTaskUseCase(repository),
-            changeFavorite = ChangeFavoriteUseCase(repository)
+            changeFavorite = ChangeFavoriteUseCase(repository),
+            getTaskUseCase = GetTaskUseCase(repository)
         )
     }
 }
