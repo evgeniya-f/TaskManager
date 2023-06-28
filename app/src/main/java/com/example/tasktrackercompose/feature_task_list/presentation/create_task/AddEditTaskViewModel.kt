@@ -44,6 +44,7 @@ class AddEditTaskViewModel @Inject constructor(
     private var currentTaskId: Int? = null
 
     init {
+        //получили из navController route и его параметры
         savedStateHandle.get<Int>("taskId")?.let { taskId ->
             if (taskId != -1) {
                 viewModelScope.launch {
@@ -54,7 +55,7 @@ class AddEditTaskViewModel @Inject constructor(
                             isHintVisible = false
                         )
                         _taskDescription.value = taskDescription.value.copy(
-                            text = task.name,
+                            text = task.description,
                             isHintVisible = false
                         )
                         _taskDate.value = task.date
@@ -114,6 +115,9 @@ class AddEditTaskViewModel @Inject constructor(
 
                     }
                 }
+            }
+            is AddEditTaskEvent.ChangeFav -> {
+                _taskIsFav.value = event.value
             }
         }
     }

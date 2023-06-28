@@ -1,6 +1,5 @@
 package com.example.tasktrackercompose.feature_task_list.presentation.create_task.components
 
-import android.util.Log
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +29,6 @@ fun ChooseDateButton(
         datepicker {
             n_date ->
             val t_date = Date.from(n_date.atStartOfDay(ZoneId.systemDefault()).toInstant())
-            Log.d("DatePicker", "Выбрали дату ${t_date}")
             onDatePicked(t_date)
         }
     }
@@ -48,7 +46,6 @@ fun ChooseDateButton(
         else {
             Text(text = "Выбирете дату")
         }
-
     }
 }
 

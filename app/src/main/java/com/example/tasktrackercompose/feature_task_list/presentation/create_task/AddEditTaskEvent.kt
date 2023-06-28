@@ -9,5 +9,6 @@ sealed class AddEditTaskEvent{
     data class EnterDescription(val value: String): AddEditTaskEvent()
     data class ChangeDescriptionFocus(val focusState: FocusState): AddEditTaskEvent()
     data class ChangeDate(val value: Date): AddEditTaskEvent()
+    data class ChangeFav(val value: Boolean): AddEditTaskEvent()
     object SaveTask: AddEditTaskEvent()
 }
